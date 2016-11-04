@@ -3,11 +3,11 @@ node {
         git 'https://github.com/Mao-xy/RiskManage.git'
     }
     stage('QA') {
-        //bat 'sonar-runner'
+        bat 'sonar-runner'
     }
     stage('build') {
         def mvnHome = tool 'M3'
-        sh "${mvnHome}\\bin\\mvn -B clean package"
+        bat "${mvnHome}\\bin\\mvn -B clean package"
     }
     stage('deploy') {
         bat "docker stop my || true"
