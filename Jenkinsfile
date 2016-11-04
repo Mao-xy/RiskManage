@@ -3,7 +3,7 @@ node {
         git 'https://github.com/Mao-xy/RiskManage.git'
     }
     stage('QA') {
-        bat 'sonar-scanner'
+        bat 'sonar-runner'
     }
     stage('build') {
         def mvnHome = tool 'M3'
